@@ -31,6 +31,34 @@ size_t Size(void* ptr)
 // extraMemoryAllocated counts bytes of extra memory allocated
 void mergeSort(int pData[], int l, int r)
 {
+	// Initializing values 
+	int i, j, mid, *tmp, len, index; 
+
+	// Defining the values
+	i = l; j = r; index = 0;
+	mid = (i + j) / 2;
+	len = r - l + 1;
+	tmp = Alloc(len);
+
+	// Index array given both lists can be copied
+	while ((i < mid) || (mid <= j)){
+		// list one copy
+		if((mid > j || (i < mid && pData[i]> pData[mid]))){
+			tmp[index] = pData[i];
+			i++;
+			index++;
+		}
+		else{ // list two copy values
+			tmp[index] = pData[mid];
+			mid++;
+			index++;
+		}
+	}
+	// Values copied
+	for(i = l; i <= r; i++)
+		pData[i] = tmp[i - l];
+	// freeing the space allocated
+	DeAlloc(tmp);
 }
 
 // parses input file to an integer array
