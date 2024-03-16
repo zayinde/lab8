@@ -1,3 +1,9 @@
+/*
+ * Name: Zahir Baker
+ * Assignment: Lab Assignment 8
+ * Date: 3-15-24
+ */
+
 #include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
